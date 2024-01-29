@@ -9,7 +9,8 @@
 <% request.setCharacterEncoding("UTF-8"); %>
 <html>
 <head>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
+<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">-->
+<link rel="stylesheet" href="./resources/css/bootstrap.min.css">
 <meta charset="UTF-8">
 <title>상품 상세 정보</title>
 </head>
@@ -30,6 +31,13 @@
 	%>
 	<div class="container">
 		<div class="row">
+			<!-- 이미지 추가 -->
+			<div class="col-md-5">
+				<%-- cos.jar 이용을 위해 물리적인 경로로 바꿈 --%>
+				<img src="c:/upload/<%= product.getFilename() %>"
+					style="width: 100%">
+			</div>
+			
 			<div class="col-md-6 m-4">
 				<h3><%= product.getPname() %> </h3>
 				<p><%= product.getDescription()  %></p>

@@ -1,3 +1,6 @@
+<%@page import="java.util.Enumeration"%>
+<%@page import="com.oreilly.servlet.multipart.DefaultFileRenamePolicy"%>
+<%@page import="com.oreilly.servlet.MultipartRequest"%>
 <%@page import="dto.Product"%>
 <%@page import="dao.ProductRepository"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -5,15 +8,26 @@
 
 <%
 	request.setCharacterEncoding("utf-8");
-	//addProduct.jsp에서 사용자가 입력한 부분을 받아서 저장 중
-	String productId = request.getParameter("productId");
-	String name = request.getParameter("name");
-	String unitPrice = request.getParameter("unitPrice"); //단가
-	String description = request.getParameter("description"); //제품 상세 요약
-	String manufacturer = request.getParameter("manufacturer"); //제조사
-	String categrory = request.getParameter("categrory");
-	String unitsInStock = request.getParameter("unitsInStock"); //재고
-	String condition = request.getParameter("condition"); //재품 상태
+	//addProduct.jsp에서 사용자가 업로드한 이미지 부분을 받아서 저장 중
+	String filename = "";
+	String realFolder = "c:\\upload"; // 웹 어플리케이션에서 절대경로
+	int maxSize = 10 * 1024 * 1024;	//최대 업로드 크기 (10M)
+	String encType = "utf-8"; //인코딩 유형
+	
+	MultipartRequest multi = new MultipartRequest(request, realFolder, maxSize,
+									encType, new DefaultFileRenamePolicy());
+
+
+	//addProduct.jsp에서 사용자가 입력한 부분을 받아서 저장 중	
+	//String productId = request.getParameter("productId"); 파일 업로드 때문에 바꿔줘야 함
+	String productId = multi.getParameter("productId");
+	String name = multi.getParameter("name");
+	String unitPrice = multi.getParameter("unitPrice"); //단가
+	String description = multi.getParameter("description"); //제품 상세 요약
+	String manufacturer = multi.getParameter("manufacturer"); //제조사
+	String categrory = multi.getParameter("categrory");
+	String unitsInStock = multi.getParameter("unitsInStock"); //재고
+	String condition = multi.getParameter("condition"); //재품 상태
 	
 	Integer price;
 	long stock;
@@ -33,6 +47,13 @@
 		stock = Long.valueOf(unitsInStock);
 	}
 	
+	Enumeration files = multi.getFileNames();
+	String fname = (String)files.nextElement();
+	String fileName = multi.getFilesystemName(fname);
+	
+/* 	System.out.println("요청 들어온 파라메터 이름 : " + fname);
+	System.out.println("저장 파일 이름 : " + fileName); 이상없음 */
+	
 	ProductRepository dao = ProductRepository.getInstance();
 	Product newProduct = new Product();
 	
@@ -45,6 +66,7 @@
 	newProduct.setCategrory(categrory);
 	newProduct.setUnitsInStock(stock); //stock도
 	newProduct.setCondition(condition);
+	newProduct.setFilename(fileName); // 이미지 저장 부분
 	
 	//ArrayList에 새 상품을 추가하고 있음
 	dao.addProduct(newProduct);

@@ -9,7 +9,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
+<%-- CDN방식(인터넷 되는 곳 허용) 대신 부트스트랩 다운로드를 이용 --%>
+<%--<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"> --%>
+<%-- 다운로드 받은 파일을 직접 link를 걸고 있음 --%>
+<link rel="stylesheet" href="./resources/css/bootstrap.min.css">
 <meta charset="UTF-8">
 <title>상품 목록</title>
 </head>
@@ -36,6 +39,12 @@
 					Product product = listOfProducts.get(i);
 			%>
 			<div class="col-md-4 mt-4"> <!-- 컬럼을 12를 4개로 분할 -->
+				<%-- 경로를 지정해서 이미지를 출력
+				 <img src="./resources/images/<%= product.getFilename() %>" --%>
+				 
+				 <%-- cos.jar 이용을 위해 물리적인 경로로 바꿈 --%>
+				<img src="c:/upload/<%= product.getFilename() %>"
+					style="max-width:300px; max-height:300px;">
 				<h3><%=product.getPname()%> </h3>
 				<p><%=product.getDescription() %></p>
 				<p><%=product.getUnitPrice() %>원</p>

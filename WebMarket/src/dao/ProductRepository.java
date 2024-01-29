@@ -22,6 +22,7 @@ public class ProductRepository {
 		phone.setManufacturer("삼성");
 		phone.setUnitsInStock(1000);
 		phone.setCondition("New");
+		phone.setFilename("daniel-romero-s20.jpg");
 		
 		Product notebook = new Product("P1235", "LG Gram", 2000000);
 		notebook.setDescription("제품 상세 요약");
@@ -29,6 +30,7 @@ public class ProductRepository {
 		notebook.setManufacturer("LG");
 		notebook.setUnitsInStock(1000);
 		notebook.setCondition("refurbished");
+		notebook.setFilename("andras-vas- Laptop.jpg");
 		
 		Product tablet = new Product("P1236", "Galaxy Tab", 600000);
 		tablet.setDescription("212.8*125.6*6.6mm, 제품 상세 요약");
@@ -36,6 +38,7 @@ public class ProductRepository {
 		tablet.setManufacturer("삼성");
 		tablet.setUnitsInStock(100);
 		tablet.setCondition("Old");
+		tablet.setFilename("francois-hoang-tab.jpg");
 		
 		Product catTower = new Product("CT01", "풀옵션 캣타워", 300000);
 		catTower.setDescription("대형 3단 이상,<br> 가로 90cm 세로 60cm 높이 180cm");
@@ -43,6 +46,7 @@ public class ProductRepository {
 		catTower.setManufacturer("MMM");
 		catTower.setUnitsInStock(10);
 		catTower.setCondition("New");
+		catTower.setFilename("petrebels-catTree.jpg");
 		
 		
 		listOfProducts.add(phone);

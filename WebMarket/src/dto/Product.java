@@ -15,6 +15,7 @@ public class Product implements Serializable {
 	private String categrory;
 	private long unitsInStock; //재고
 	private String condition; //재품 상태
+	private String filename;
 	
 	public Product() {
 		super();
@@ -93,6 +94,14 @@ public class Product implements Serializable {
 
 	public static long getSerialversionuid() {
 		return serialVersionUID;
+	}
+
+	public String getFilename() {
+		return filename;
+	}
+
+	public void setFilename(String filename) {
+		this.filename = filename;
 	}
 	
 }

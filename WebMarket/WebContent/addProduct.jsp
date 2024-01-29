@@ -3,7 +3,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
+<%-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"> --%>
+<link rel="stylesheet" href="./resources/css/bootstrap.min.css">
 <meta charset="UTF-8">
 <title>상품 등록</title>
 </head>
@@ -16,7 +17,8 @@
 	</div>
 	
 	<div class="container">			<%-- form-horizontal : 폼 요소들이 수평적으로 배치가 되도록 해줌 --%>
-		<form name="newProduct" action="./processAddProduct.jsp" class="form-horizontal" method="post">
+		<form name="newProduct" action="./processAddProduct.jsp" class="form-horizontal"
+			method="post" enctype="multipart/form-data">
 			
 			<div class="form-group row mt-3" align="center">
 			  <%-- 화면 크기가 768px 이상일 때 sm부분 적용됨. div요소의 block특성에 의해 100% 너비를 가지며
@@ -83,6 +85,15 @@
 					<label class="btn btn-outline-primary" for="btnradio3">재생 상품</label>
 				</div>
 			</div>
+			
+			<!-- 상품 이미지 업로드 부분 -->
+			<div class="form-group row mt-3">
+				<label class="col-sm-2"><b>이미지</b></label>
+				<div class="col-sm-5">		
+					<input type="file" name="productImage" class="form-control">
+				</div>
+			</div>
+			
 			
 			<div class="form-group row mt-3" align="center">
 			  <%-- offset 지정은 컬럼 격자의 2 만큼 띄우기--%>
