@@ -40,7 +40,7 @@ public class ProductRepository {
 		tablet.setCondition("Old");
 		tablet.setFilename("francois-hoang-tab.jpg");
 		
-		Product catTower = new Product("CT01", "풀옵션 캣타워", 300000);
+		Product catTower = new Product("P0001", "풀옵션 캣타워", 300000);
 		catTower.setDescription("대형 3단 이상,<br> 가로 90cm 세로 60cm 높이 180cm");
 		catTower.setCategrory("가구");
 		catTower.setManufacturer("MMM");
