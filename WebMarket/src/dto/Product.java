@@ -12,9 +12,9 @@ public class Product implements Serializable {
 	private Integer unitPrice; //단가
 	private String description; //제품 상세 요약
 	private String manufacturer; //제조사
-	private String categrory;
+	private String category;
 	private long unitsInStock; //재고
-	private String condition; //재품 상태
+	private String condition; //제품 상태
 	private String filename;
 	
 	public Product() {
@@ -68,12 +68,12 @@ public class Product implements Serializable {
 		this.manufacturer = manufacturer;
 	}
 
-	public String getCategrory() {
-		return categrory;
+	public String getCategory() {
+		return category;
 	}
 
-	public void setCategrory(String categrory) {
-		this.categrory = categrory;
+	public void setCategory(String category) {
+		this.category = category;
 	}
 
 	public long getUnitsInStock() {

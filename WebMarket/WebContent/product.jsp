@@ -34,8 +34,12 @@
 		<div class="row">
 			<!-- 이미지 추가 -->
 			<div class="col-md-5">
-				<%-- cos.jar 이용을 위해 물리적인 경로로 바꿈 --%>
-				<img src="c:/upload/<%= product.getFilename() %>"
+				<%-- cos.jar 이용을 위해 물리적인 경로로 바꿈-%>
+				<%-- <img src="c:/upload/<%= product.getFilename() %>"
+					style="width: 100%"> 
+					 -> 웹 브라우저에서 적용 안 되서 다시 변경---%>
+					 
+				<img src="${pageContext.request.contextPath }/resources/images/<%= product.getFilename() %>"
 					style="width: 100%">
 			</div>
 			
@@ -44,7 +48,7 @@
 				<p><%= product.getDescription()  %></p>
 				<p><b>상품 코드 : </b><span class="badge rounded-pill text-bg-info"><%=product.getProductId()%></span></p>
 				<p><b>제조사 : </b><%=product.getManufacturer() %></p>
-				<p><b>분류 : </b><%=product.getCategrory() %></p>
+				<p><b>분류 : </b><%=product.getCategory() %></p>
 				<p><b>재고 수 : </b><%=product.getUnitsInStock() %></p>
 				<h4><%= product.getUnitPrice() %>원</h4>
 				

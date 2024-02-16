@@ -18,7 +18,7 @@ public class ProductRepository {
 	public ProductRepository() {
 		Product phone = new Product("P1234", "Galaxy S20", 1200000);
 		phone.setDescription("제품 상세 요약");
-		phone.setCategrory("Smart Phone");
+		phone.setCategory("Smart Phone");
 		phone.setManufacturer("삼성");
 		phone.setUnitsInStock(1000);
 		phone.setCondition("New");
@@ -26,7 +26,7 @@ public class ProductRepository {
 		
 		Product notebook = new Product("P1235", "LG Gram", 2000000);
 		notebook.setDescription("제품 상세 요약");
-		notebook.setCategrory("노트북");
+		notebook.setCategory("노트북");
 		notebook.setManufacturer("LG");
 		notebook.setUnitsInStock(1000);
 		notebook.setCondition("refurbished");
@@ -34,7 +34,7 @@ public class ProductRepository {
 		
 		Product tablet = new Product("P1236", "Galaxy Tab", 600000);
 		tablet.setDescription("212.8*125.6*6.6mm, 제품 상세 요약");
-		tablet.setCategrory("태블릿");
+		tablet.setCategory("태블릿");
 		tablet.setManufacturer("삼성");
 		tablet.setUnitsInStock(100);
 		tablet.setCondition("Old");
@@ -42,7 +42,7 @@ public class ProductRepository {
 		
 		Product catTower = new Product("P0001", "풀옵션 캣타워", 300000);
 		catTower.setDescription("대형 3단 이상,<br> 가로 90cm 세로 60cm 높이 180cm");
-		catTower.setCategrory("가구");
+		catTower.setCategory("가구");
 		catTower.setManufacturer("MMM");
 		catTower.setUnitsInStock(10);
 		catTower.setCondition("New");

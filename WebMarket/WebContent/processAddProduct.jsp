@@ -10,7 +10,13 @@
 	request.setCharacterEncoding("utf-8");
 	//addProduct.jsp에서 사용자가 업로드한 이미지 부분을 받아서 저장 중
 	String filename = "";
-	String realFolder = "c:\\upload"; // 웹 어플리케이션에서 절대경로
+	/* String realFolder = "c:\\upload"; // 웹 어플리케이션에서 절대경로
+	String realFolder = request.getContextPath() + "/WebContent/resources/images/"; //상대경로*/
+	/* --중요함--
+	사용자가 추가한 상품들의 이미지를 현재 프로젝트의 images폴더로 잡아서 저장을 해야지
+	진정한 서버의 역할을 함과 동시에 아울러 이미지를 뿌려줄 때 이미지를 가지고 오는데 문제가 없다. */
+	String realFolder = "D:/workspace/jsp_workspace/WebMarket/WebContent/resources/images";
+	//System.out.println(realFolder);
 	int maxSize = 10 * 1024 * 1024;	//최대 업로드 크기 (10M)
 	String encType = "utf-8"; //인코딩 유형
 	
@@ -25,9 +31,9 @@
 	String unitPrice = multi.getParameter("unitPrice"); //단가
 	String description = multi.getParameter("description"); //제품 상세 요약
 	String manufacturer = multi.getParameter("manufacturer"); //제조사
-	String categrory = multi.getParameter("categrory");
+	String category = multi.getParameter("category");
 	String unitsInStock = multi.getParameter("unitsInStock"); //재고
-	String condition = multi.getParameter("condition"); //재품 상태
+	String condition = multi.getParameter("condition"); //제품 상태
 	
 	Integer price;
 	long stock;
@@ -63,7 +69,7 @@
 	newProduct.setUnitPrice(price); //위에서 따로 만든 price
 	newProduct.setDescription(description);
 	newProduct.setManufacturer(manufacturer);
-	newProduct.setCategrory(categrory);
+	newProduct.setCategory(category);
 	newProduct.setUnitsInStock(stock); //stock도
 	newProduct.setCondition(condition);
 	newProduct.setFilename(fileName); // 이미지 저장 부분

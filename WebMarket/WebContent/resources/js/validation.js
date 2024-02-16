@@ -8,12 +8,12 @@ function CheckAddProduct() {
     
     //상품 아이디 체크 부분
     if(!check(/^P[0-9]{4,11}$/, productId, "[상품 코드]\nP와 숫자를 조합하여 5~12자까지 입력하세요.\n"
-    		+ "첫 글자는 반드시 P로 시작해주세요.")){
+    		+ "첫 글자는 반드시 대문자P로 시작해주세요.")){
         return false;
     }
     //상품명 체크
-    if(name.value.length < 4 || 12 < name.value.length) {
-        alert("[상품명]\n최소 4자~최대 12자까지 입력해 주세요.");
+    if(name.value.length < 3 || 12 < name.value.length) {
+        alert("[상품명]\n최소 3자~최대 12자까지 입력해 주세요.");
         name.select();
         name.focus();
         return false;

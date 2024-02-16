@@ -42,8 +42,12 @@
 				<%-- 경로를 지정해서 이미지를 출력
 				 <img src="./resources/images/<%= product.getFilename() %>" --%>
 				 
-				 <%-- cos.jar 이용을 위해 물리적인 경로로 바꿈 --%>
-				<img src="c:/upload/<%= product.getFilename() %>"
+				<%-- cos.jar 이용을 위해 물리적인 경로로 바꿈 --%>
+				<%-- <img src="c:/upload/<%= product.getFilename() %>" 
+				위처럼 하게 되면 일반 웹브라우저에서는 적용이 되지 않음. 웹 어플리케이션에서 적용이 되려면
+				상대적 경로로 제시를 해줘야 제대로 인식이 됨--%>
+				
+				<img src="${pageContext.request.contextPath }/resources/images/<%= product.getFilename() %>"
 					style="max-width:300px; max-height:300px;">
 				<h3><%=product.getPname()%> </h3>
 				<p><%=product.getDescription() %></p>
