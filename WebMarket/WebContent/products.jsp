@@ -3,10 +3,10 @@
 <%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<% request.setCharacterEncoding("UTF-8"); %>
 <%-- <jsp:useBean id="productDAO" class="dao.ProductRepository" scope="session"/> --%>
 
 <!DOCTYPE html>
+<% request.setCharacterEncoding("UTF-8"); %>
 <html>
 <head>
 <%-- CDN방식(인터넷 되는 곳 허용) 대신 부트스트랩 다운로드를 이용 --%>

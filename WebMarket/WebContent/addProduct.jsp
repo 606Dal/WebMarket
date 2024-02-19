@@ -27,8 +27,10 @@
 	
 	<div class="container">	
 		<%-- 한글 혹은 영어로 표식할지 선택하는 부분을 추가함 --%>
-		<div class="text-end">
+		<div class="text-end mt-2">
 			<a href="?language=ko">Korean</a>||<a href="?language=en">English</a>
+			<%-- 로그아웃 버튼 --%>
+			<a href="logout.jsp" class="btn btn-sm btn-outline-success"><b>로그아웃</b></a>
 		</div>
 			<%-- form-horizontal : 폼 요소들이 수평적으로 배치가 되도록 해줌 --%>
 		<form name="newProduct" action="./processAddProduct.jsp" class="form-horizontal"
@@ -112,7 +114,7 @@
 			<!-- 상품 이미지 업로드 부분 -->
 			<div class="form-group row mt-3">
 				<!-- <label class="col-sm-2"><b>이미지</b></label> -->
-				<label class="col-sm-2"  align="center"><b><fmt:message key="productImage"  /></b></label>
+				<label class="col-sm-2"  align="center"><b><fmt:message key="productImage" /></b></label>
 				<div class="col-sm-3">
 					<input type="file" name="productImage" class="form-control">
 				</div>
