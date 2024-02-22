@@ -46,6 +46,32 @@
   	</form-login-config>
   </login-config>
   
+  <!-- 필터 적용 부분 -->
+  <filter>
+  	<filter-name>LogFilter</filter-name>
+  	<filter-class>filter.LogFilter</filter-class>
+  </filter>
+  <filter-mapping>
+  	<filter-name>LogFilter</filter-name>
+  	<url-pattern>/*</url-pattern>
+  </filter-mapping>
+  
+  <!-- 필터 적용(파일에 기록) 부분 -->
+  <filter>
+  	<filter-name>LogFileFilter</filter-name>
+  	<filter-class>filter.LogFileFilter</filter-class>
+  	<init-param>
+  		<!-- 로그의 기록을 남길 파일의 경로를 지정하고 있다. -->
+  		<param-name>filename</param-name>
+  		<param-value>c:\\logs\\webmarket.log</param-value>
+  	</init-param>
+  </filter>
+  
+  <filter-mapping>
+  	<filter-name>LogFileFilter</filter-name>
+  	<url-pattern>/*</url-pattern>
+  </filter-mapping>
+  
   
   
 </web-app>

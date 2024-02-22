@@ -39,6 +39,8 @@
 				</div>
 				<%-- 비밀번호를 입력하는 부분 --%>
 				<div class="form_group">
+					<%-- 기존의 sr-only클래스는 부트스트랩5에서는 visually-hidden으로 변경됨.
+					웹접근성을 위한 코드이며 역할은 Lable 내용을 숨김.--%>
 					<label for="inputPassword" class="visually-hidden">Password</label>
 					<input type="password" class="form-control" placeholder="Password"
 						   name='j_password' required>

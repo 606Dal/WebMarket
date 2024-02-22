@@ -14,6 +14,20 @@
 <link rel="stylesheet" href="./resources/css/bootstrap.min.css">
 <meta charset="UTF-8">
 <title>상품 상세 정보</title>
+
+<%-- 장바구니에 추가하기 위한 핸들러 함수 --%>
+<script type="text/javascript">
+	function addToCart() {
+		//confirm()함수는 사용자의 선택을 할 때 사용.
+		if(confirm("해당 상품을 장바구니에 추가 하시겠습니까?")){
+			document.addForm.submit();
+		} else {
+			document.addForm.reset();
+		}
+	}
+</script>
+
+
 </head>
 <body>
 	<jsp:include page="menu.jsp" />
@@ -40,7 +54,7 @@
 					 -> 웹 브라우저에서 적용 안 되서 다시 변경---%>
 					 
 				<img src="${pageContext.request.contextPath }/resources/images/<%= product.getFilename() %>"
-					style="width: 100%">
+					style="width: 100%" class="mt-4">
 			</div>
 			
 			<div class="col-md-6 m-4">
@@ -52,8 +66,13 @@
 				<p><b>재고 수 : </b><%=product.getUnitsInStock() %></p>
 				<h4><%= product.getUnitPrice() %>원</h4>
 				
-				<p><a href="#" class="btn btn-outline-primary">상품 주문</a></p>
-				<a href="./products.jsp" class="btn btn-outline-secondary">상품 목록 &raquo;</a>
+				<p><form name="addForm" action="./addCart.jsp?id=<%= product.getProductId() %>" method="post">
+					<%-- 상품 주문을 클릭하면 자바스크립트의 핸들러 함수 addToCart()가 호출되도록 만듦 --%>
+					<a href="#" class="btn btn-outline-primary btn-sm" onclick="addToCart()">상품 주문 &raquo;</a>
+					<%-- 장바구니 버튼을 추가함. --%>
+					<a href="./cart.jsp" class="btn btn-outline-warning btn-sm">장바구니 &raquo;</a>
+					<a href="./products.jsp" class="btn btn-outline-secondary btn-sm">상품 목록 &raquo;</a>
+				</form>
 			</div>
 		</div>
 		<hr>

@@ -46,9 +46,10 @@
 				<%-- <img src="c:/upload/<%= product.getFilename() %>" 
 				위처럼 하게 되면 일반 웹브라우저에서는 적용이 되지 않음. 웹 어플리케이션에서 적용이 되려면
 				상대적 경로로 제시를 해줘야 제대로 인식이 됨--%>
-				
-				<img src="${pageContext.request.contextPath }/resources/images/<%= product.getFilename() %>"
-					style="max-width:300px; max-height:300px;">
+				<div class="container" style="text-align: center; height: 270px; max-width: 300px;">
+					<img src="${pageContext.request.contextPath }/resources/images/<%= product.getFilename() %>"
+						class="img-fluid rounded m-auto d-block" style="max-height: 90%; max-width: 100%">
+				</div>
 				<h3><%=product.getPname()%> </h3>
 				<p><%=product.getDescription() %></p>
 				<p><%=product.getUnitPrice() %>원</p>

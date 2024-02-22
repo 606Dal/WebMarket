@@ -124,7 +124,7 @@
 			  <%-- offset 지정은 컬럼 격자의 2 만큼 띄우기--%>
 				<div class="col-sm-offset-2 col-sm-10">		
 					<%-- 타입을 submit으로 주게 되면 유효성 검사를 하다가 오류가 발생해도 action속성 값으로
-					피에지 이동이 일어나기 때문에, button으로 바꿈 --%>
+					페이지 이동이 일어나기 때문에, button으로 바꿈 --%>
 					<!-- <input type="button" class="btn btn-primary" value="등록"
 						onclick="CheckAddProduct()"> -->
 					<input type="button" class="btn btn-primary" value="<fmt:message key="button" />"
