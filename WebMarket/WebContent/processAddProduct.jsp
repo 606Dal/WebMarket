@@ -1,3 +1,4 @@
+<%@page import="java.sql.*"%>
 <%@page import="java.util.Enumeration"%>
 <%@page import="com.oreilly.servlet.multipart.DefaultFileRenamePolicy"%>
 <%@page import="com.oreilly.servlet.MultipartRequest"%>
@@ -5,6 +6,7 @@
 <%@page import="dao.ProductRepository"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ include file="dbconn.jsp" %>
 
 <%
 	request.setCharacterEncoding("utf-8");
@@ -53,6 +55,8 @@
 		stock = Long.valueOf(unitsInStock);
 	}
 	
+	System.out.println("add");
+	
 	Enumeration files = multi.getFileNames();
 	String fname = (String)files.nextElement();
 	String fileName = multi.getFilesystemName(fname);
@@ -60,11 +64,32 @@
 /* 	System.out.println("요청 들어온 파라메터 이름 : " + fname);
 	System.out.println("저장 파일 이름 : " + fileName); 이상없음 */
 	
-	ProductRepository dao = ProductRepository.getInstance();
-	Product newProduct = new Product();
+	PreparedStatement pstmt = null;
+	String sql = "insert into product values(?,?,?,?,?,?,?,?,?)";
+	pstmt = conn.prepareStatement(sql);
+	
+	pstmt.setString(1, productId);
+	pstmt.setString(2, name);
+	pstmt.setInt(3, price);
+	pstmt.setString(4, description);
+	pstmt.setString(5, manufacturer);
+	pstmt.setString(6, category);
+	pstmt.setLong(7, stock);
+	pstmt.setString(8, condition);
+	pstmt.setString(9, fileName);
+	pstmt.executeUpdate();
+	System.out.println("상품 등록 완료");
+	
+	//자원 해제
+	if(pstmt != null) pstmt.close();
+	if(conn != null) conn.close();
+	
+	/* 아래 내용은 위의 DB삽입 내용으로 대체함 */
+	/* ProductRepository dao = ProductRepository.getInstance();
+	Product newProduct = new Product(); */
 	
 	//Product 객체에 사용자가 입력한 내용을 저장하고 있음
-	newProduct.setProductId(productId);
+	/* newProduct.setProductId(productId);
 	newProduct.setPname(name);
 	newProduct.setUnitPrice(price); //위에서 따로 만든 price
 	newProduct.setDescription(description);
@@ -72,10 +97,10 @@
 	newProduct.setCategory(category);
 	newProduct.setUnitsInStock(stock); //stock도
 	newProduct.setCondition(condition);
-	newProduct.setFilename(fileName); // 이미지 저장 부분
+	newProduct.setFilename(fileName); */ // 이미지 저장 부분
 	
 	//ArrayList에 새 상품을 추가하고 있음
-	dao.addProduct(newProduct);
+	/* dao.addProduct(newProduct); */
 	//강제로 페이지 이동 중
 	response.sendRedirect("products.jsp");
 	

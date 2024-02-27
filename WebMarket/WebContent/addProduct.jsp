@@ -98,14 +98,14 @@
 			<div class="form-group row mt-3" role="group" aria-label="Basic radio toggle button group" >
 				<!-- <label class="col-sm-2"><b>상태</b></label> -->
 				<label class="col-sm-2"  align="center"><b><fmt:message key="condition" /></b></label>
-				<div class="col-sm-5">
+				<div class="col-sm-7">
 					<!-- 신규 제품 -->
 					<input type="radio" class="btn-check" name="condition" id="btnradio1" autocomplete="off" checked value="New">
 					<label class="btn btn-outline-primary" for="btnradio1"><fmt:message key="condition_New" /></label>
 					<!-- 중고 제품 -->
 					<input type="radio" class="btn-check" name="condition" id="btnradio2" autocomplete="off" value="Old">
 					<label class="btn btn-outline-primary" for="btnradio2"><fmt:message key="condition_Old" /></label>
-					<!-- 재생 상품 -->
+					<!-- 재생 제품 -->
 					<input type="radio" class="btn-check" name="condition" id="btnradio3" autocomplete="off" value="Refurbished">
 					<label class="btn btn-outline-primary" for="btnradio3"><fmt:message key="condition_Refurbished" /></label>
 				</div>
@@ -115,7 +115,7 @@
 			<div class="form-group row mt-3">
 				<!-- <label class="col-sm-2"><b>이미지</b></label> -->
 				<label class="col-sm-2"  align="center"><b><fmt:message key="productImage" /></b></label>
-				<div class="col-sm-3">
+				<div class="col-sm-5">
 					<input type="file" name="productImage" class="form-control">
 				</div>
 			</div>

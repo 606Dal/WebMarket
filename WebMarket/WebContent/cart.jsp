@@ -1,3 +1,4 @@
+<%@page import="java.text.DecimalFormat"%>
 <%@page import="dto.Product"%>
 <%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -9,6 +10,7 @@
 <% 
 	//세션의 ID값을 가져오는 코드
 	String cartId = session.getId();
+	DecimalFormat dfFormat = new DecimalFormat("###,###");
 %>
 <meta charset="UTF-8">
 <title>장바구니</title>
@@ -27,7 +29,7 @@
 				<tr>
 					<td align="left"><a href="./deleteCart.jsp?cartId=<%= cartId %>"
 					class="btn btn-danger">삭제하기</a></td>
-					<td align="right"><a href="#"
+					<td align="right"><a href="./shippingInfo.jsp?cartId=<%= cartId %>"
 					class="btn btn-success">주문하기</a></td>
 				</tr>
 			</table>
@@ -60,9 +62,9 @@
 				%>
 				<tr>
 					<td><%= product.getProductId() %>-<%= product.getPname() %></td>
-					<td><%= product.getUnitPrice() %></td>
+					<td><%= dfFormat.format(product.getUnitPrice()) %></td>
 					<td><%= product.getQuantity() %></td>
-					<td><%= total %></td>
+					<td><%= dfFormat.format(total) %></td>
 					<td><a href="./removeCart.jsp?id=<%= product.getProductId() %>"
 							class="badge text-bg-danger">삭제</a></td>
 				</tr>
@@ -73,7 +75,7 @@
 					<th></th>
 					<th></th>
 					<th>총액</th>
-					<th>총액<%= sum %></th>
+					<th>총액<%= dfFormat.format(sum) %></th>
 					<th></th>
 				</tr>
 			</table>

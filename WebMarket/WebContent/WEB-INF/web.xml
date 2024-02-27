@@ -28,6 +28,7 @@
   		<web-resource-name>WebMarket</web-resource-name>
   		<description></description>
   		<url-pattern>/addProduct.jsp</url-pattern>
+  		<url-pattern>/editProduct.jsp</url-pattern>
   	</web-resource-collection>
   	<!-- 권한 제약조건 설정 -->
   	<auth-constraint>
