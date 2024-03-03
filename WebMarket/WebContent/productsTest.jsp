@@ -42,24 +42,13 @@
 	<div class="container">
 		<!-- 한 행씩 보이게 -->
 		<div class="row" align="center">
-			<%@ include file="dbconn.jsp" %>
 			<%
-			/*	for(int i=0; i<listOfProducts.size(); i++){
-					Product product = listOfProducts.get(i); */
-				PreparedStatement pstmt = null;
-				ResultSet rs = null;
-				
-				String sql = "select * from product";
-				//Connection객체로 부터 쿼리문을 주고 prepareStatement를 얻고 있다.
-				pstmt = conn.prepareStatement(sql);
-				//쿼리문의 결과를 받아옴
-				rs = pstmt.executeQuery();
-			/* 	ProductRepository dao = ProductRepository.getInstance();
+				ProductRepository dao = ProductRepository.getInstance();
 				ArrayList<Product> pList = new ArrayList<>();
 				pList = dao.getAllProducts();
 				Iterator it = pList.iterator();
-				 */
-				while(rs.next()){ 
+				
+				while(it.hasNext()){ 
 			%>
 				<div class="col-md-4 mt-4"> <!-- 컬럼을 12를 4개로 분할 -->
 					<div class="container" style="text-align: center; height: 270px; max-width: 300px;">
@@ -67,12 +56,12 @@
 							class="img-fluid rounded m-auto d-block" style="max-height: 90%; max-width: 100%">
 					</div>
 					
-					<%-- <h3><%=  %> </h3>
-					<p> <%=rs.getString("p_description") %></p>
-					<p> <%=dfFormat.format(Integer.parseInt(rs.getString("p_unitPrice"))) %>원</p> --%>
-					<h3><%=rs.getString("p_name") %> </h3>
+					<h3><%= %> </h3>
 					<p> <%=rs.getString("p_description") %></p>
 					<p> <%=dfFormat.format(Integer.parseInt(rs.getString("p_unitPrice"))) %>원</p>
+					<%-- <h3><%=rs.getString("p_name") %> </h3>
+					<p> <%=rs.getString("p_description") %></p>
+					<p> <%=dfFormat.format(Integer.parseInt(rs.getString("p_unitPrice"))) %>원</p> --%>
 					
 					<%-- 경로를 지정해서 이미지를 출력
 					 <img src="./resources/images/<%= product.getFilename() %>" --%>

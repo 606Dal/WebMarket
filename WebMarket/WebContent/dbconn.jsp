@@ -9,7 +9,7 @@
 
 	try{
 		String url = "jdbc:mysql://localhost:3306/webmarketdb";
-		String user = "YEO";
+		String user = "";
 		String password = "";
 		
 		Class.forName("com.mysql.jdbc.Driver"); //드라이버명

@@ -1,10 +1,12 @@
+<%@page import="java.text.DecimalFormat"%>
 <%@page import="dto.Product"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="java.net.URLDecoder"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <% 
-	request.setCharacterEncoding("UTF-8"); 
+	request.setCharacterEncoding("UTF-8");
+	DecimalFormat dfFormat = new DecimalFormat("###,###");
 
 	String cartId = session.getId();
 	
@@ -102,8 +104,8 @@
 				<tr>
 					<td class="text-center"><em><%= product.getPname() %></em></td>
 					<td class="text-center"><em><%= product.getQuantity() %></em></td>
-					<td class="text-center"><em><%= product.getUnitPrice() %>원</em></td>
-					<td class="text-center"><em><%= total %>원</em></td>
+					<td class="text-center"><em><%= dfFormat.format(product.getUnitPrice()) %>원</em></td>
+					<td class="text-center"><em><%= dfFormat.format(total) %>원</em></td>
 				</tr>
 				<% 
 					}
@@ -112,7 +114,7 @@
 					<td></td>
 					<td></td>
 					<td class="text-end"><strong>총액 : </strong></td>
-					<td class="text-center text-danger"><strong><%= sum %>원</strong></td>
+					<td class="text-center text-danger"><strong><%= dfFormat.format(sum) %>원</strong></td>
 				</tr>
 			</table>
 			
