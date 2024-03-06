@@ -73,6 +73,16 @@
   	<url-pattern>/*</url-pattern>
   </filter-mapping>
   
+  <!-- 확장자가 *.do로 끝나는 파일들을 컨트롤러로 보내기 위해 맵핑함 -->
+  <servlet>
+  	<servlet-name>BoardController</servlet-name>
+  	<servlet-class>mvc.controller.BoardController</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>BoardController</servlet-name>
+  	<url-pattern>*.do</url-pattern>
+  </servlet-mapping>
   
   
 </web-app>

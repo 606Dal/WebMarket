@@ -5,7 +5,8 @@
 <% request.setCharacterEncoding("UTF-8"); %>
 <html>
 <head>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
+<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"> -->
+<link rel="stylesheet" href="./resources/css/bootstrap.min.css">
 <meta charset="UTF-8">
 <title>웹 쇼핑몰</title>
 </head>

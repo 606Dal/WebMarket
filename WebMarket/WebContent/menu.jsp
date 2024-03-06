@@ -47,6 +47,7 @@
 						<li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/editProduct.jsp?edit=delete">상품 삭제</a></li>
 					</C:otherwise>
 				</C:choose>
+				<li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/BoardListAction.do?pageNum=1">게시판</a></li>
 			</ul>
 		</div>
 		

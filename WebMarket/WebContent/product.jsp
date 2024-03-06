@@ -90,10 +90,10 @@
 				
 				<p><form name="addForm" action="./addCart.jsp?id=<%=rs.getString("p_id")%>" method="post">
 					<%-- 상품 주문을 클릭하면 자바스크립트의 핸들러 함수 addToCart()가 호출되도록 만듦 --%>
-					<a href="#" class="btn btn-outline-primary btn-sm" onclick="addToCart()">상품 주문 &raquo;</a>
+					<a href="#" class="btn btn-outline-primary" onclick="addToCart()">상품 주문 &raquo;</a>
 					<%-- 장바구니 버튼을 추가함. --%>
-					<a href="./cart.jsp" class="btn btn-outline-warning btn-sm">장바구니 &raquo;</a>
-					<a href="./products.jsp" class="btn btn-outline-secondary btn-sm">상품 목록 &raquo;</a>
+					<a href="./cart.jsp" class="btn btn-outline-warning">장바구니 &raquo;</a>
+					<a href="./products.jsp" class="btn btn-outline-secondary">상품 목록 &raquo;</a>
 				</form>
 			</div>
 		</div>
