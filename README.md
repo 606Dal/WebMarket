@@ -21,6 +21,10 @@
     * MultipartRequest를 이용하기 위해 필요
 3. bootstrap-5.3.1
 ---
+
+(참고) web.xml 로그 파일 경로에 'webmarket.log' txt파일로 따로 생성함
+
+---
 만든 기간 : 2024-01-16 ~ 2024-03-07
 
 강의 출처 : ITGO - JSP 기초에서 실무까지 완전정복 하기 (담당 강사 : 신경진)
