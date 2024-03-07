@@ -19,6 +19,7 @@
 1. ResourceBundle Editor 1.0.5 - 이클립스 마켓 플레이스에서 다운로드
 2. cos.jar(22.05) - http://servlets.com
     * MultipartRequest를 이용하기 위해 필요
+3. bootstrap-5.3.1
 ---
 만든 기간 : 2024-01-16 ~ 2024-03-07
 
